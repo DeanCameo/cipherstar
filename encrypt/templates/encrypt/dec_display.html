@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    {%  include 'encrypt/sidebar.html' %}
+    <link rel="stylesheet" href="{% static 'encrypt/style.css' %}">
+    <style>
+        body {
+            background-color: rgb(27, 26, 26);
+        }
+
+        p {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: larger;
+        }
+
+        h2 {
+            color: white;
+            text-align: center;
+        }
+
+        form {
+            height: 100%;
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        hr {
+            border: 1px solid white;
+            width: 100%;
+        }
+    </style>
+<head>
+    <title>Display Decrypted Text</title>
+</head>
+<body>
+    <hr>
+    <h1>CAESAR CIPHER DECRYPTION RESULT</h1>
+    <hr>
+    <br>
+    <form name="encryptDisplayForm">
+        <h2><strong>Your Decrypted Text: </strong></h2><p>{{ text }}</p> 
+    </form>
+
+</body>
+</html>

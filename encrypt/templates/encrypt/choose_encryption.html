@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    {% include 'encrypt/sidebar.html' %}
+    <link rel="stylesheet" href="{% static 'encrypt/style.css' %}">
+    <style>
+        body {
+            background-color: rgb(27, 26, 26);
+        }
+
+        h1 {
+            color: rgb(255, 255, 255);
+            font-family: Copperplate;
+            font-size: 250%;
+            text-align: center;
+        }
+
+        .card {
+            width: 18rem;
+            height: 100%; 
+            margin: 20px;
+            background-color: rgb(49, 49, 49);
+            color: white;
+            text-decoration: none;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-top {
+            max-height: 100%; 
+            object-fit: cover;
+        }
+
+        .card-body {
+            text-align: center;
+            flex-grow: 1; 
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        .card-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        hr {
+            border: 1px solid white;
+            width: 100%;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch; 
+            flex-wrap: wrap;
+        }
+
+        .description-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .description {
+            color: white;
+            text-align: center;
+            margin-top: 10px;
+            font-family: Arial, sans-serif;
+            width: 18rem; 
+            margin: 0 20px; 
+        }
+    </style>
+    <title>Choose Encryption Method</title>
+</head>
+
+<body>
+    <hr>
+    <h1>CHOOSE ENCRYPTION METHOD</h1>
+    <div class="card-container">
+        <a href="{% url 'caesar_encryption' %}" class="card">
+            <img src="{% static 'encrypt/caesar_cipher.jpg' %}" class="card-img-top" alt="Caesar Cipher">
+            <div class="card-body">
+                <h5 class="card-title">Caesar Cipher</h5>
+            </div>
+        </a>
+
+        <a href="{% url 'substitution_encryption' %}" class="card">
+            <img src="{% static 'encrypt/substitution_cipher.jpg' %}" class="card-img-top" alt="Substitution Cipher">
+            <div class="card-body">
+                <h5 class="card-title">Substitution Cipher</h5>
+            </div>
+        </a>
+
+        <a href="{% url 'vigenere_encryption' %}" class="card">
+            <img src="{% static 'encrypt/vigenere_cipher.jpg' %}" class="card-img-top" alt="Vigenere Cipher">
+            <div class="card-body">
+                <h5 class="card-title">Vigenère Cipher</h5>
+            </div>
+        </a>
+    </div>
+
+    <div class="description-container">
+        <p class="description">The Caesar Cipher, named after Julius Caesar,
+        is a simple substitution encryption technique.
+        Each letter in the plaintext is shifted by a fixed number
+        of positions down the alphabet.
+        It's a basic and easily understandable form of encryption
+        but lacks security for modern applications.</p>
+
+        <p class="description">The Substitution Cipher is a broader category of encryption
+        where each letter in the plaintext is replaced with
+        another letter or symbol according to a predefined substitution key.
+        Unlike Caesar Cipher, the substitution key can be more complex,
+        offering greater variability in encoding.</p>
+
+        <p class="description">The Vigenère Cipher is a method of encrypting text
+        using a simple form of polyalphabetic substitution.
+        Instead of a single shift Vigenère uses a keyword to determine multiple shift values.
+        The keyword is repeated to match the length of the plaintext,
+        creating a more complex and secure encryption.</p>
+    </div>
+
+</body>
+</html>

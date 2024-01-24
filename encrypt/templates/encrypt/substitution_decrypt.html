@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    {%  include 'encrypt/sidebar.html' %}
+    <link rel="stylesheet" href="{% static 'encrypt/style.css' %}">
+    <style>
+        body{
+            background-color: rgb(27, 26, 26);
+        }
+
+        p{
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-family: Arial Black;
+
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 20%;
+            height: 20%;
+        }
+
+        h1{
+            color: rgb(255, 255, 255);
+            font-family: Copperplate;
+            font-size: 250%;  
+            text-align: center;
+        }
+                
+        .back-link-container {
+            text-align: center;
+        }
+
+        .back-link-container a {
+            display: inline-block;
+            margin-top: 10px; /* Adjust as needed */
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+    <title>Substitution Cipher Decryption</title>
+</head>
+<body>
+    <hr>
+    <h1>SUBSTITUTION CIPHER DECRYPTION</h1>
+    <div id="main">
+        <form name="substitutionDecryptForm" method="post">
+            {% csrf_token %}
+            <label for="encrypted_text">ENTER ENCRYPTED TEXT:</label>
+            <input type="text" name="encrypted_text" id="encrypted_text" required="required" minlength="2"><br><br>
+            <label for="shuffled_alphabet">ENTER Shuffled Alphabet:</label>
+            <input type="text" name="shuffled_alphabet" id="shuffled_alphabet" required="required"><br><br>
+            <button type="submit">Decrypt</button>
+        </form>
+    </div>
+    <div class="back-link-container">
+        <a href="{% url 'choose_decryption' %}">Back</a>
+    </div>  
+</body>
+</html>
+
+
+

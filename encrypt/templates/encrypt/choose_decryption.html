@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    {% include 'encrypt/sidebar.html' %}
+    <link rel="stylesheet" href="{% static 'encrypt/style.css' %}">
+    <style>
+        body {
+            background-color: rgb(27, 26, 26);
+        }
+
+        h1 {
+            color: rgb(255, 255, 255);
+            font-family: Copperplate;
+            font-size: 250%;
+            text-align: center;
+        }
+
+        .card {
+            width: 18rem;
+            height: 100%; 
+            margin: 20px;
+            background-color: rgb(49, 49, 49);
+            color: white;
+            text-decoration: none;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-top {
+            max-height: 100%; 
+            object-fit: cover;
+        }
+
+        .card-body {
+            text-align: center;
+            flex-grow: 1; 
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        .card-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        hr {
+            border: 1px solid white;
+            width: 100%;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch; 
+            flex-wrap: wrap;
+        }
+    </style>
+    <title>Choose Decryption Method</title>
+</head>
+<body>
+    <hr>
+    <h1>CHOOSE DECRYPTION METHOD</h1>
+    <div class="card-container">
+        <a href="{% url 'caesar_decryption' %}" class="card">
+            <img src="{% static 'encrypt/caesar_cipher.jpg' %}" class="card-img-top" alt="Caesar Cipher">
+            <div class="card-body">
+                <h5 class="card-title">Caesar Decipher</h5>
+            </div>
+        </a>
+
+        <a href="{% url 'substitution_decryption' %}" class="card">
+            <img src="{% static 'encrypt/substitution_cipher.jpg' %}" class="card-img-top" alt="Substitution Cipher">
+            <div class="card-body">
+                <h5 class="card-title">Substitution Decipher</h5>
+            </div>
+        </a>
+
+        <a href="{% url 'vigenere_decryption' %}" class="card">
+            <img src="{% static 'encrypt/vigenere_cipher.jpg' %}" class="card-img-top" alt="Vigenere Cipher">
+            <div class="card-body">
+                <h5 class="card-title">Vigenère Decipher</h5>
+            </div>
+        </a>
+    </div>
+
+</body>
+</html>

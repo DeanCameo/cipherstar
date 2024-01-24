@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+{%  include 'encrypt/sidebar.html' %}
+
+<style>
+    body {
+        background-color: rgb(27, 26, 26);
+        font-family: Arial, sans-serif;  /* Choose a suitable font-family */
+    }
+
+    p {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-family: Arial Black;
+    }
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        height: 60%;
+    }
+
+    h1 {
+        color: rgb(255, 255, 255);
+        font-family: Copperplate;
+        font-size: 250%;
+        text-align: center;
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+    }
+
+    .card {
+        width: 18rem;
+        margin: 20px;
+        background-color: rgb(49, 49, 49);
+        color: white;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center content horizontally inside the card */
+    }
+
+    .card:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-img-top {
+        max-height: 288px;
+        object-fit: cover;
+        margin: auto; /* Center the image horizontally and vertically */
+    }
+
+    .card-body {
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        margin-top: 10px;
+    }
+
+    .card-link {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    hr {
+        border: 1px solid white;
+        width: 100%;
+    }
+</style>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <hr>
+    <h1>CipherStar</h1>
+    <p> Encryption is the process of encoding information. </p>
+    <p> This process converts the original representation of the information, </p>
+    <p> known as plaintext, into an alternative form known as ciphertext. </p>
+    <br>
+    <p> One of the earliest forms of encryption is symbol replacement, in around 1900 BC, Egypt. </p>
+    <p> Symbol replacement encryption is “non-standard,” </p>
+    <p> which means that the symbols require a cipher or key to understand. </p>
+    <br>
+    <p> One of the most famous military encryption developments was the Caesar Cipher, </p>
+    <p> which was a system in which a letter in normal text is shifted down a fixed number of positions down the alphabet. </p>
+    <p> A message encoded with this type of encryption could be decoded with the fixed number on the Caesar Cipher. </p>
+    <br>
+    <p> In the context of cryptography, encryption serves as a mechanism to ensure confidentiality. </p>
+    <p> Since data may be visible on the Internet, </p>
+    <p> sensitive information such as passwords and personal communication may be exposed to potential interceptors. </p>
+    <br>
+    <p> The process of encrypting and decrypting messages involves keys. </p>
+    <p> The two main types of keys in cryptographic systems are symmetric-key and public-key, also known as asymmetric-key. </p>
+    <br>
+    <p> Many complex cryptographic algorithms often use simple modular arithmetic in their implementations. </p>
+    <br>
+    <div class="card-container">
+        <a href="{% url 'choose_encryption' %}" class="card">
+            <img src="{% static 'encrypt/lock.jpg' %}" class="card-img-top" alt="Encrypt Image">
+            <div class="card-body">
+                <h5 class="card-title">Encrypt</h5>
+            </div>
+        </a>
+
+        <a href="{% url 'choose_decryption' %}" class="card">
+            <img src="{% static 'encrypt/unlock.jpg' %}" class="card-img-top" alt="Decrypt Image">
+            <div class="card-body">
+                <h5 class="card-title">Decrypt</h5>
+            </div>
+        </a>
+    </div>
+</body>
+</html>
